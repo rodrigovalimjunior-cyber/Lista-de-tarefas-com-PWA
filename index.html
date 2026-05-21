@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lista de tarefas que funciona offline">
+  <meta name="theme-color" content="#4f46e5">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Tarefas">
+
+  <title>Lista de Tarefas</title>
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:,">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-content">
+      <h1 class="header-title">Minhas Tarefas</h1>
+      <span class="status-badge" id="statusBadge">online</span>
+    </div>
+    <p class="header-subtitle">
+      <span id="contadorPendentes">0</span> tarefa(s) pendente(s)
+    </p>
+  </header>
+
+  <main class="main">
+    <div class="form-container">
+      <input
+        type="text"
+        id="inputTarefa"
+        class="input-tarefa"
+        placeholder="Digite uma nova tarefa..."
+        maxlength="100"
+        autocomplete="off"
+      >
+      <button id="btnAdicionar" class="btn-adicionar">Adicionar</button>
+    </div>
+
+    <div class="filtros">
+      <button class="filtro-btn ativo" data-filtro="todas">Todas</button>
+      <button class="filtro-btn" data-filtro="pendentes">Pendentes</button>
+      <button class="filtro-btn" data-filtro="concluidas">Concluídas</button>
+    </div>
+
+    <ul class="lista-tarefas" id="listaTarefas"></ul>
+
+    <div class="lista-vazia" id="listaVazia">
+      <p>Nenhuma tarefa aqui ainda.</p>
+      <p>Adicione uma acima! 👆</p>
+    </div>
+
+    <div class="acoes-rodape">
+      <button id="btnLimparConcluidas" class="btn-limpar">Limpar concluídas</button>
+    </div>
+  </main>
+
+  <div class="banner-instalacao" id="bannerInstalacao" hidden>
+    <div class="banner-texto">
+      <strong>Instalar app</strong>
+      <span>Use offline, sem abrir o browser</span>
+    </div>
+    <div class="banner-acoes">
+      <button id="btnInstalar" class="btn-instalar">Instalar</button>
+      <button id="btnFecharBanner" class="btn-fechar-banner">✕</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
